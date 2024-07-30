@@ -45,7 +45,7 @@ Future<bool> connectDevice(BTDeviceStruct deviceInfo) async {
   return hasWriteCharacteristic;
 }
 ```
-Açıklama:Bu fonksiyon, belirtilen Bluetooth cihazına bağlanmayı dener ve cihazın yazma karakteristiğine sahip olup olmadığını kontrol eder. Bağlanma başarılı olursa ve yazma karakteristiği bulunursa true döner, aksi takdirde false döner.
+**Açıklama:** Bu fonksiyon, belirtilen Bluetooth cihazına bağlanmayı dener ve cihazın yazma karakteristiğine sahip olup olmadığını kontrol eder. Bağlanma başarılı olursa ve yazma karakteristiği bulunursa true döner, aksi takdirde false döner.
 
 ## `disconnectDevice`
 
@@ -61,7 +61,7 @@ Future disconnectDevice(BTDeviceStruct deviceInfo) async {
   }
 }
 ```
-Açıklama:Bu fonksiyon, belirtilen Bluetooth cihazının bağlantısını keser. Bağlantıyı kesme işlemi sırasında bir hata oluşursa bu hata mesajını konsola yazdırır.
+**Açıklama:** Bu fonksiyon, belirtilen Bluetooth cihazının bağlantısını keser. Bağlantıyı kesme işlemi sırasında bir hata oluşursa bu hata mesajını konsola yazdırır.
 
 ## `findDevices`
 
@@ -98,7 +98,7 @@ Future<List<BTDeviceStruct>> findDevices() async {
   return devices;
 }
 ```
-Açıklama:Bu fonksiyon, yakındaki Bluetooth cihazlarını tarar ve taranan cihazları bir liste halinde döner. Cihazlar sinyal gücüne (RSSI) göre sıralanır.
+**Açıklama:** Bu fonksiyon, yakındaki Bluetooth cihazlarını tarar ve taranan cihazları bir liste halinde döner. Cihazlar sinyal gücüne (RSSI) göre sıralanır.
 
 ## `getConnectedDevices`
 
@@ -124,7 +124,7 @@ Future<List<BTDeviceStruct>> getConnectedDevices() async {
   return devices;
 }
 ```
-Açıklama:Bu fonksiyon, şu anda bağlı olan Bluetooth cihazlarını döner. Her cihazın adı, kimliği ve RSSI değeri listelenir.
+**Açıklama:** Bu fonksiyon, şu anda bağlı olan Bluetooth cihazlarını döner. Her cihazın adı, kimliği ve RSSI değeri listelenir.
 
 ## `getRssi`
 
@@ -136,7 +136,7 @@ Future<int> getRssi(BTDeviceStruct deviceInfo) async {
   return await device.readRssi();
 }
 ```
-Açıklama:Bu fonksiyon, belirtilen Bluetooth cihazının RSSI (sinyal gücü) değerini döner.
+**Açıklama:** Bu fonksiyon, belirtilen Bluetooth cihazının RSSI (sinyal gücü) değerini döner.
 
 ## `isBluetoothEnabled`
 
@@ -148,7 +148,7 @@ Future<bool> isBluetoothEnabled() async {
   return state == BluetoothAdapterState.on;
 }
 ```
-Açıklama:Bu fonksiyon, cihazın Bluetooth'unun açık olup olmadığını kontrol eder. Bluetooth açıksa true, değilse false döner.
+**Açıklama:** Bu fonksiyon, cihazın Bluetooth'unun açık olup olmadığını kontrol eder. Bluetooth açıksa true, değilse false döner.
 
 ## `sendData`
 
@@ -168,7 +168,7 @@ Future sendData(BTDeviceStruct deviceInfo, String data) async {
   }
 }
 ```
-Açıklama:Bu fonksiyon, belirtilen Bluetooth cihazına veri gönderir. Cihazın yazma karakteristiğine sahip olduğundan emin olur ve ardından veriyi yazar.
+**Açıklama:** Bu fonksiyon, belirtilen Bluetooth cihazına veri gönderir. Cihazın yazma karakteristiğine sahip olduğundan emin olur ve ardından veriyi yazar.
 
 ## `turnOffBluetooth`
 
@@ -183,7 +183,7 @@ Future<bool> turnOffBluetooth() async {
     return false;
 }
 ```
-Açıklama:Bu fonksiyon, Bluetooth'u kapatmayı dener. Öncelikle cihazın Bluetooth desteği olup olmadığını kontrol eder, eğer destekliyorsa Bluetooth'u kapatır ve true döner, aksi takdirde false döner.
+**Açıklama:** Bu fonksiyon, Bluetooth'u kapatmayı dener. Öncelikle cihazın Bluetooth desteği olup olmadığını kontrol eder, eğer destekliyorsa Bluetooth'u kapatır ve true döner, aksi takdirde false döner.
 
 ## `turnOnBluetooth`
 
@@ -198,7 +198,7 @@ Future<bool> turnOnBluetooth() async {
     return false;
 }
 ```
-Açıklama:Bu fonksiyon, Bluetooth'u açmayı dener. Öncelikle cihazın Bluetooth desteği olup olmadığını kontrol eder, eğer destekliyorsa Bluetooth'u açar ve true döner, aksi takdirde false döner.
+**Açıklama:** Bu fonksiyon, Bluetooth'u açmayı dener. Öncelikle cihazın Bluetooth desteği olup olmadığını kontrol eder, eğer destekliyorsa Bluetooth'u açar ve true döner, aksi takdirde false döner.
 
 ## `receiveData`
 
@@ -221,4 +221,4 @@ Future<String?> receiveData(BTDeviceStruct deviceInfo) async {
   return null;
 }
 ```
-Açıklama:Bu fonksiyon, belirtilen Bluetooth cihazından veri okumak için kullanılır. Cihazın servislerini bulur ve servislerin karakteristiklerini kontrol eder. Eğer karakteristik "read" ve "notify" özelliklerine sahipse veriyi okur, aksi takdirde "null" döner.
+**Açıklama:** Bu fonksiyon, belirtilen Bluetooth cihazından veri okumak için kullanılır. Cihazın servislerini bulur ve servislerin karakteristiklerini kontrol eder. Eğer karakteristik "read" ve "notify" özelliklerine sahipse veriyi okur, aksi takdirde "null" döner.
